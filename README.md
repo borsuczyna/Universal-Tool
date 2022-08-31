@@ -27,8 +27,5 @@ Universal Tool allows users to generate API key and use it on their own websites
 MIT
 
 # Buy me a coffe
-<<<<<<< HEAD
+HEAD
 Paypal: borsuczyna@essa.int.pl
-=======
-Paypal: borsuczyna@essa.int.pl
->>>>>>> 504c5515bb0d9a8d4227805ed1c50810111738fe
