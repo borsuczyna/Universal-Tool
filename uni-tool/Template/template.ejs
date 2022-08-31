@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>universal-tool.com</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <include type="script" src="category.js" defer/>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<include type="style" src="style.css"/>
+<include type="style" src="player.css"/>
+<body>
+    <div id="container">
+        <header>
+            <a href="/">
+                <img src="../public/logo.png" id="logo" alt="logo"/>
+            </a>
+            <ourInspiration>inspired by <a href="https://ezgif.com">ezgif.com</a></ourInspiration>
+        </header>
+        <div>
+            <ul id="categories-list"></ul>
+            <ul id="sub-categories-list"></ul>
+        </div>
+        <div id="pageContent">
+            <pageBody/>
+        </div>
+    </div>
+</body>
+</html>
