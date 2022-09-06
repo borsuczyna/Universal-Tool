@@ -1,0 +1,13 @@
+{
+    "watch": "**/*.ts",
+    "ext": "ts,tsx,json",
+    "exec": "node --loader ts-node/esm index.ts",
+    "execMap": {
+      "ts": "ts-node"
+    },
+    "env": {
+      "TS_NODE_PROJECT": "./tsconfig.json",
+      "TS_NODE_TRANSPILE_ONLY": "true",
+      "NODE_NO_WARNINGS": "1"
+    }
+  }
