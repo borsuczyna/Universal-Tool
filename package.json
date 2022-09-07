@@ -9,6 +9,7 @@
     "start": "nodemon"
   },
   "devDependencies": {
+    "@types/ejs": "^3.1.1",
     "@types/express": "^4.17.13",
     "@types/node": "^18.7.14",
     "ts-node": "^10.9.1",
