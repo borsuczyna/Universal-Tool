@@ -5,6 +5,9 @@ import * as Router from './scripts/Router/main.js';
 Router.init(config.port);
 
 // ********** WHOLE BACKEND ********** \\
+// Logs
+import('./scripts/Log/main.js');
+
 // Public directory
 import('./scripts/Public/main.js');
 
