@@ -2,6 +2,5 @@
     "port": 3000,
     "logsLocation": "logs/",
     "logFileName": "{month}.{day}.{year} {hour}.{minute}.{second}.log",
-    "consoleDebug": true,
-    "outputLogsToConsole": true
+    "consoleDebug": true
 }
