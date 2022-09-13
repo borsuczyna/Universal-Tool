@@ -1,0 +1,33 @@
+<include type="style" src="css/player.css"/>
+
+<script defer>
+    const videoUrl = '<%= file %>';
+</script>
+
+<include type="script" src="js/playPause.js" defer/>
+<include type="script" src="mute/export.js" defer/>
+
+<div id="video-player">
+    <videoPlayer src="<%= file %>" style=``
+        outline: 1px solid rgb(35, 35, 35);
+        border-radius: 0.5em;
+        margin-block: 0.5em;
+    `` id="video-player-src"/>
+
+    <div id="down-buttons">
+        <div class="left-buttons">
+            <button class="noselect" id="play-button">
+                <i class="fa-solid fa-play" id="play-icon"></i>
+                <i class="fa-solid fa-pause" id="pause-icon" style="display: none;"></i>
+            </button>
+            <button class="noselect" id="export-button">
+                Mute
+            </button>
+        </div>
+        <div class="right-buttons">
+            <a href="<%= file %>" download="<%= fileName %>"><button class="noselect" id="download-button">
+                Download current
+            </button></a>
+        </div>
+    </div>
+</div>

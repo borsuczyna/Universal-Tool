@@ -5,6 +5,8 @@ import { generateToken, Token } from '../Queue/main.js';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+import { removeTempFile } from '../Public/main.js';
+
 const __dirname: string = dirname(fileURLToPath(import.meta.url));
 const __maindir: string = __dirname.replaceAll('\\', '/').split('/').slice(0, -2).join('\\');
 
@@ -29,10 +31,12 @@ Router.post('/upload', (req: any, res: any) => {
             message: 'File upload error'
         });
         return;
-    }
+    };
 
     res.status(200).json({
         token: token,
         file: `${token}.${format}`
     });
+
+    //setTimeout(removeTempFile, 5 * 60 * 1000, __maindir + `\\public\\temp\\${token}.${format}`)
 });
