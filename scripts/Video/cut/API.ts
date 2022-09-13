@@ -17,7 +17,7 @@ Router.post('/api/cut', (req: any, res: any) => {
         return res.status(400).send(`Invalid request body`);
     }
 
-    let token: string = createQueueItem({
+    let token: Token = createQueueItem({
         action: 'video / cut',
         next: 'video',
     });
