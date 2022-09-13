@@ -1,6 +1,7 @@
 import * as Router from '../Router/main.js';
 import * as fs from 'fs';
 import config from '../../config.json' assert {type: 'json'};
+import { outputLog } from '../Log/main.js';
 
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -18,9 +19,7 @@ export function removeTempFile(file_path: string){
             return;
         };
 
-        if(config.consoleDebug) {
-            console.log(`Removed ${file_path} after 5 minutes`);
-        }
+        outputLog(`Removed ${file_path} after 5 minutes`);
     });
 };
 
@@ -30,9 +29,7 @@ export function clearTempDirectory() {
     for(let file of files) {
         const error: any = fs.unlinkSync(`${__dirname}\\public\\temp\\${file}`);
         
-        if(config.consoleDebug) {
-            console.log(`Removed undeleted temp file ${file}`);
-        }
+        outputLog(`Removed undeleted temp file ${file}`);
     }
 }
 

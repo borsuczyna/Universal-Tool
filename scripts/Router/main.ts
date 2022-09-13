@@ -1,6 +1,7 @@
 import express from 'express';
 import fileUpload from 'express-fileupload';
 import bodyParser from 'body-parser';
+import { outputLog } from '../Log/main.js';
 
 var app: any = null;
 
@@ -17,7 +18,7 @@ export async function init(port: number = 3000) {
 
     await new Promise((resolve: CallableFunction) => {
         app.listen(port, () => {
-            console.log(`Listening on port ${port}...`);
+            outputLog(`Listening on port ${port}...`);
             resolve();
         });
     });

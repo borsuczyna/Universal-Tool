@@ -4,6 +4,7 @@ import fs from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const __maindir: string = __dirname.replaceAll('\\', '/').split('/').slice(0, -2).join('\\');
 
@@ -33,7 +34,7 @@ async function initLogFile(): Promise<void> {
 }
 
 export async function outputLog(...args: string[]): Promise<void> {
-    if(config.outputLogsToConsole) {
+    if(config.consoleDebug) {
         const time = new Date();
         let timeFormat = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
         console.log(`[${timeFormat}] ${args.join('   ')}`);
@@ -43,4 +44,3 @@ export async function outputLog(...args: string[]): Promise<void> {
 }
 
 initLogFile();
-outputLog('test');

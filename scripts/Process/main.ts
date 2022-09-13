@@ -1,5 +1,6 @@
 import { ChildProcess, spawn } from "child_process";
 import { Token, setProgress, setFinish, outputConsole } from "../Queue/main.js";
+import { outputLog } from '../Log/main.js';
 import config from '../../config.json' assert {type: 'json'};
 
 const regex: {[index: string]: RegExp} = {
@@ -32,9 +33,7 @@ const messageFromProcess = function(this: Process, message: string) {
     } else if(message.startsWith('[DEBUG] ')) {
         message = message.slice(8);
         
-        if(config.consoleDebug) {
-            console.log(`[DEBUG] [${this.token}] ${message}`);
-        }
+        outputLog(`[DEBUG] [${this.token}] ${message}`);
 
         return;
     } else if(message.startsWith('[FINISH] ')) {
