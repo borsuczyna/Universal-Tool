@@ -10,11 +10,9 @@ Router.post('/api/change_speed', (req: any, res: any) => {
     // }
 
     let file: string = req.body.file?.replaceAll('\\', '/').split('/').pop();
-    let start: string = req.body.start?.toString();
-    let finish: string = req.body.finish?.toString();
 
-    if(!file || !start || !finish || typeof file !=  'string' || typeof start !=  'string' || typeof finish !=  'string') {
-        return res.status(404).send(`Invalid request body`);
+    if(!file || typeof file !=  'string') {
+        return res.status(406).send(`Invalid request body`);
     }
 
     let token: string = createQueueItem({
