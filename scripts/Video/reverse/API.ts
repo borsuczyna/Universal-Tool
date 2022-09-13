@@ -1,6 +1,12 @@
 import * as Router from '../../Router/main.js';
-import { Process } from '../../Process/main.js';
+import { FFMpegProcess } from '../../Process/main.js';
 import { createQueueItem, generateToken, Token } from '../../Queue/main.js';
+
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const __maindir: string = __dirname.replaceAll('\\', '/').split('/').slice(0, -3).join('\\');
 
 Router.post('/api/reverse', (req: any, res: any) => {
     // if(!canDoApiRequest(req)) {
@@ -25,5 +31,8 @@ Router.post('/api/reverse', (req: any, res: any) => {
     });
 
     let outFile: Token = generateToken();
-    let process = new Process('reverse', token, ['public\\temp', file, outFile + '.mp4']);
+    let extension: string | undefined = file.split('.').pop();
+    if(!extension || extension.length == 0) extension = 'mp4';
+
+    let process = new FFMpegProcess(token, ['-i', `${__maindir}\\public\\temp\\${file}`, '-vf', 'reverse', '-af', 'areverse', `${__maindir}\\public\\temp\\${outFile}.${extension}`]);
 });

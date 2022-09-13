@@ -7,7 +7,7 @@ const regex: {[index: string]: RegExp} = {
     moviepyProgress: /t:[a-zA-Z0-9% ]*\|[a-zA-Z0-9%# ]*\| *([0-9]*)\/([0-9]*) *\[[0-9]*:[0-9]*<([0-9]*:[0-9]*)/,
 };
 
-const messageFromProcess = function(this: Process, message: string) {
+const messageFromProcess = function(this: Process | FFMpegProcess, message: string) {
     let type = null;
 
     if(message.startsWith('[INFO] ')) {
@@ -71,6 +71,23 @@ export class Process {
         this.token = token;
 
         outputConsole(this.token, 'INFO', 'Starting python process...');
+
+        this.process?.stdout?.on('data', multipleMessages.bind(this));
+        this.process?.stderr?.on('data', multipleMessages.bind(this));
+    }
+}
+
+export class FFMpegProcess {
+    token: Token;
+    process: ChildProcess;
+
+    constructor(token: Token, params: string[]) {
+        this.process = spawn('ffmpeg.exe', [...params]);
+        this.token = token;
+
+        console.log(params.join(' '))
+
+        outputConsole(this.token, 'INFO', 'Starting ffmpeg process...');
 
         this.process?.stdout?.on('data', multipleMessages.bind(this));
         this.process?.stderr?.on('data', multipleMessages.bind(this));
