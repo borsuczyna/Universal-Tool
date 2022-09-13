@@ -20,7 +20,7 @@ Universal Tool contains all kind of tools for Video, Image, GIF etc.
 - [ ] Reverse
 - [x] Change speed
 - [x] Mute
-- [ ] Change volume
+- [x] Change volume
 - [ ] Merge
 ## Image
 ## GIF
