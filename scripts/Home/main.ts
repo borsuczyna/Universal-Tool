@@ -1,5 +1,5 @@
 import * as Router from '../Router/main.js';
-import {Render} from '../Render/main.js';
+import { Render } from '../Render/main.js';
 
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';

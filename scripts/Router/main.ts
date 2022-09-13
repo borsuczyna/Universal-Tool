@@ -1,9 +1,19 @@
 import express from 'express';
+import fileUpload from 'express-fileupload';
+import bodyParser from 'body-parser';
 
 var app: any = null;
 
 export async function init(port: number = 3000) {
     app = express();
+
+    app.use(fileUpload({
+        limits: {
+            fileSize: 50 * 1024 * 1024
+        }
+    }));
+
+    app.use(bodyParser.json());
 
     await new Promise((resolve: CallableFunction) => {
         app.listen(port, () => {

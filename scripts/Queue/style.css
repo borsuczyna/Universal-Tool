@@ -1,0 +1,92 @@
+p {
+    margin: 0;
+}
+
+#pageContent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#content {
+    margin-bottom: 1em;
+}
+
+progress {
+    border-radius: 3px; 
+    width: 30em;
+    height: 0.5em;
+    outline: 1px solid rgb(39, 39, 39);
+}
+
+progress::-webkit-progress-bar {
+    background-color: rgb(32, 32, 32);
+    border-radius: 3px;
+}
+
+progress::-webkit-progress-value {
+    background-color: rgb(55, 55, 55);
+    border-radius: 3px;
+}
+
+#console {
+    margin-top: 0.8em;
+    width: 29em;
+    height: 15em;
+    background-color: rgb(36, 36, 36);
+    border: 1px solid rgb(35,35,35);
+    border-radius: 0.5em;
+    padding: 0.5em;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0.3em;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(43, 43, 43, 0);
+}
+  
+::-webkit-scrollbar-thumb {
+    background: rgb(53, 53, 53);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@media (max-width: 568px) {
+    #progress-bar {
+        width: 100%;
+    }
+
+    #console {
+        width: calc(100% - 1em);
+        height: calc(100vh - 21em);
+    }
+}
+
+.message-info, .message-error, .message-success, .message-warning {
+    font-weight: 100;
+}
+
+.message-info {
+    color: white;
+}
+
+.message-warning {
+    color: rgb(255, 183, 89);
+}
+
+.message-error {
+    color: rgb(255, 111, 111);
+}
+
+.message-success {
+    color: rgb(99, 255, 99);
+}

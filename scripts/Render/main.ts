@@ -1,5 +1,6 @@
-import {readFile} from '../File/main.js';
-import {renderTemplate} from './Template/main.js'
+import { readFile } from '../File/main.js';
+import { renderTemplate } from './Template/main.js'
+import { renderUploader } from './Uploader/main.js';
 import ejs from 'ejs';
 
 const renderWorks = [
@@ -36,7 +37,7 @@ const renderWorks = [
     },
 ];
 
-export async function Render(path: string, dataPath: string, props: any, isTemplate: boolean = false): Promise<string> {
+export async function Render(path: string, dataPath: string, props: any = {}, isTemplate: boolean): Promise<string> {
     let html: string = await readFile(`${dataPath}\\${path}.ejs`);
 
     for(let work of renderWorks) {
@@ -89,8 +90,11 @@ export async function Render(path: string, dataPath: string, props: any, isTempl
     }
 
     if(!isTemplate) {
-        let template = await renderTemplate();
+        let template: string = await renderTemplate();
         html = template.replace('<pageBody/>', html);
+        
+        let uploader: string = await renderUploader();
+        html = html.replace('<fileUploader/>', uploader);
     }
     
     html = ejs.render(html, props || {});
