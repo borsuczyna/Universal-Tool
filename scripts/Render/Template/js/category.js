@@ -41,6 +41,10 @@ let categories = [
                 name: "Merge",
                 url: '/merge'
             },
+            {
+                name: "Change Volume",
+                url: '/change_volume'
+            },
         ]
     },
     {
