@@ -1,5 +1,6 @@
 import { ChildProcess, spawn } from "child_process";
 import { Token, setProgress, setFinish, outputConsole } from "../Queue/main.js";
+import config from '../../config.json' assert {type: 'json'};
 
 const regex: {[index: string]: RegExp} = {
     moviepyProgress: /t:[a-zA-Z0-9% ]*\|[a-zA-Z0-9%# ]*\| *([0-9]*)\/([0-9]*) *\[[0-9]*:[0-9]*<([0-9]*:[0-9]*)/,
@@ -30,7 +31,11 @@ const messageFromProcess = function(this: Process, message: string) {
         return;
     } else if(message.startsWith('[DEBUG] ')) {
         message = message.slice(8);
-        console.log(`[DEBUG] [${this.token}] ${message}`);
+        
+        if(config.consoleDebug) {
+            console.log(`[DEBUG] [${this.token}] ${message}`);
+        }
+
         return;
     } else if(message.startsWith('[FINISH] ')) {
         message = message.slice(9);

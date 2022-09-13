@@ -1,6 +1,10 @@
+import config from './config.json' assert {type: 'json'};
 import * as Router from './scripts/Router/main.js';
-Router.init();
 
+// Init router
+Router.init(config.port);
+
+// ********** WHOLE BACKEND ********** \\
 // Public directory
 import('./scripts/Public/main.js');
 

@@ -1,5 +1,6 @@
 import * as Router from '../Router/main.js';
 import * as fs from 'fs';
+import config from '../../config.json' assert {type: 'json'};
 
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -12,16 +13,29 @@ function sendFile(req: any, res: any) {
 
 export function removeTempFile(file_path: string){
     fs.unlink(file_path, (err) => {
-        if(err){
+        if(err) {
             console.error(err);
             return;
         };
 
-        console.log(`${file_path} REMOVED AFTER 5 MINUTES`);
+        if(config.consoleDebug) {
+            console.log(`Removed ${file_path} after 5 minutes`);
+        }
     });
 };
 
+export function clearTempDirectory() {
+    const files: string[] = fs.readdirSync(`${__dirname}\\public\\temp`);
+    
+    for(let file of files) {
+        const error: any = fs.unlinkSync(`${__dirname}\\public\\temp\\${file}`);
+        
+        if(config.consoleDebug) {
+            console.log(`Removed undeleted temp file ${file}`);
+        }
+    }
+}
+
+clearTempDirectory();
 
 Router.get('/public/*', sendFile);
-
-export default null;
