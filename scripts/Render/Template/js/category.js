@@ -31,7 +31,7 @@ let categories = [
             },
             {
                 name: "Change speed",
-                url: '/change-speed'
+                url: '/change_speed'
             },
             {
                 name: "Mute",
