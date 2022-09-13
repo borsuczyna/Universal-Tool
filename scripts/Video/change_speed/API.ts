@@ -12,7 +12,7 @@ Router.post('/api/change_speed', (req: any, res: any) => {
     let file: string = req.body.file?.replaceAll('\\', '/').split('/').pop();
 
     if(!file || typeof file !=  'string') {
-        return res.status(406).send(`Invalid request body`);
+        return res.status(400).send(`Invalid request body`);
     }
 
     let token: string = createQueueItem({
@@ -25,5 +25,5 @@ Router.post('/api/change_speed', (req: any, res: any) => {
     });
 
     let outFile: Token = generateToken();
-    let process = new Process('change_speed', token, ['public\\temp', file, outFile + '.mp4', req.body.start.toString(), req.body.finish.toString()]);
+    let process = new Process('change_speed', token, ['public\\temp', file, outFile + '.mp4', req.body.speed]);
 });

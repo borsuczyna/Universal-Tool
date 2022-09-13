@@ -43,4 +43,3 @@ export async function outputLog(...args: string[]): Promise<void> {
 }
 
 initLogFile();
-outputLog('test');

@@ -1,6 +1,7 @@
 from utils import *
 from time import sleep
 from moviepy.editor import *
+import moviepy.video.fx.all as vfx
 import sys
 
 # Setup variables
@@ -26,8 +27,8 @@ println('[INFO] Loading video...')
 video = VideoFileClip(absoluteInputFilePath)
 
 # Change video's speed
-println('[INFO] Changin speed...')
-video = video.fx(vfx.speed, playBackRate)
+println('[INFO] Changing speed...')
+video = video.fx(vfx.speedx, float(playBackRate))
 
 # Save video
 println('[INFO] Saving file...')
