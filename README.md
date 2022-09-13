@@ -18,8 +18,8 @@ Universal Tool contains all kind of tools for Video, Image, GIF etc.
 - [ ] Resize
 - [ ] Rotate
 - [ ] Reverse
-- [ ] Change speed
-- [ ] Mute
+- [x] Change speed
+- [x] Mute
 - [ ] Change volume
 - [ ] Merge
 ## Image

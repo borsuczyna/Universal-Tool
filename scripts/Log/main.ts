@@ -40,7 +40,7 @@ export async function outputLog(...args: string[]): Promise<void> {
         console.log(`[${timeFormat}] ${args.join('   ')}`);
     }
 
-    fs.appendFileSync(logFile, args.join('\n'));
+    fs.appendFileSync(logFile, args.join('\n') + '\n');
 }
 
 initLogFile();
