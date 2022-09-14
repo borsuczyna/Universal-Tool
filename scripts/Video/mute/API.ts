@@ -10,10 +10,8 @@ Router.post('/api/mute', (req: any, res: any) => {
     // }
 
     let file: string = req.body.file?.replaceAll('\\', '/').split('/').pop();
-    let start: string = req.body.start?.toString();
-    let finish: string = req.body.finish?.toString();
 
-    if(!file || !start || !finish || typeof file !=  'string' || typeof start !=  'string' || typeof finish !=  'string') {
+    if(!file || typeof file !=  'string') {
         return res.status(400).send(`Invalid request body`);
     }
 
@@ -27,5 +25,5 @@ Router.post('/api/mute', (req: any, res: any) => {
     });
 
     let outFile: Token = generateToken();
-    let process = new Process('mute', token, ['public\\temp', file, outFile + '.mp4', req.body.start.toString(), req.body.finish.toString()]);
+    let process = new Process('mute', token, ['public\\temp', file, outFile + '.mp4']);
 });

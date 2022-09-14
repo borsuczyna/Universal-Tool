@@ -34,8 +34,6 @@ const exportVideo = async () => {
     
     var result = await makeRequest('POST', '/api/mute', {
         file: videoUrl,
-        start: 0,
-        finish: 0,
     });
     
     result = JSON.parse(result);

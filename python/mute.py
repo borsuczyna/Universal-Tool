@@ -7,8 +7,6 @@ import sys
 directory = parentdir() + sys.argv[1]
 inputFile = sys.argv[2]
 outputFile = sys.argv[3]
-start = sys.argv[4]
-end = sys.argv[5]
 
 # Directories
 absoluteInputFilePath = directory + '\\' + inputFile
@@ -20,8 +18,6 @@ println('[SUCCESS] Process started!')
 
 println('[DEBUG] Input file: ' + absoluteInputFilePath)
 println('[DEBUG] Output file: ' + absoluteOutputFilePath)
-println('[DEBUG] Start timestamp: ' + start)
-println('[DEBUG] End timestamp: ' + end)
 
 # Load video
 println('[INFO] Loading video...')
