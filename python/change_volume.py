@@ -19,8 +19,7 @@ absoluteOutputFilePath = directory + '\\' + outputFile
 
 println('[SUCCESS] Process started!')
 
-println('[DEBUG] Input file: ' + absoluteInputFilePath)
-println('[DEBUG] Output file: ' + absoluteOutputFilePath)
+println('[DEBUG] [Change volume] Input: ' + inputFile + ' | output: ' + outputFile + ' | volume: ' + videoVolume)
 
 # Load video
 println('[INFO] Loading video...')

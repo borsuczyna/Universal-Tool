@@ -33,7 +33,7 @@ const messageFromProcess = function(this: Process | FFMpegProcess, message: stri
     } else if(message.startsWith('[DEBUG] ')) {
         message = message.slice(8);
         
-        outputLog(`[DEBUG] [${this.token}] ${message}`);
+        outputLog(`[${this.token}] ${message}`);
 
         return;
     } else if(message.startsWith('[FINISH] ')) {
