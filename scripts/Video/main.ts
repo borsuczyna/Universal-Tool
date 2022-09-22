@@ -11,13 +11,14 @@ import('./mute/API.js');
 import('./change_speed/API.js');
 import('./reverse/API.js');
 import('./change_volume/API.js');
+import('./crop/API.js');
 
 const __dirname: string = dirname(fileURLToPath(import.meta.url));
 const __maindir: string = dirname(fileURLToPath(import.meta.url)).split('\\').slice(0, -2).join('\\');
 const __uploaderdir: string = __maindir + '\\scripts\\Uploader\\page\\';
 
 const validActions = [
-    'cut', 'mute', 'change_speed', 'reverse', "change_volume"
+    'cut', 'mute', 'change_speed', 'reverse', 'change_volume', 'crop'
 ]
 
 async function videoPage(req: any, res: any) {

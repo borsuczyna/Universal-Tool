@@ -33,6 +33,7 @@ export function clearTempDirectory() {
     }
 }
 
-clearTempDirectory();
+// UNCOMMENT LATER
+// clearTempDirectory();
 
 Router.get('/public/*', sendFile);
