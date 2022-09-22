@@ -32,9 +32,26 @@ const exportVideo = async () => {
     if(!canClick) return;
     canClick = false;
     
-    var result = await makeRequest('POST', '/api/change_volume', {
+    if(!cropData || !cropData.selected) return;
+    let x = cropData.selected.x * player.videoWidth;
+    let y = cropData.selected.y * player.videoHeight;
+    let width = cropData.selected.width * player.videoWidth;
+    let height = cropData.selected.height * player.videoHeight;
+
+    if(width < 0) {
+        x += width;
+        width = -cropData.selected.width;
+    } if(height < 0) {
+        y += height;
+        height = -height;
+    }
+    
+    var result = await makeRequest('POST', '/api/crop', {
         file: videoUrl,
-        volume: videoVolume,
+        x: x,
+        y: y,
+        width: width,
+        height: height
     });
     
     result = JSON.parse(result);
