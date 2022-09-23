@@ -14,7 +14,7 @@ Universal Tool contains all kind of tools for Video, Image, GIF etc.
 - [x] API
 ## Video
 - [x] Cutting
-- [ ] Cropping
+- [x] Cropping
 - [ ] Resize
 - [ ] Rotate
 - [ ] Reverse
