@@ -9,6 +9,7 @@ Universal Tool contains all kind of tools for Video, Image, GIF etc.
 3. run `npm run start`
 
 # Roadmap
+- [ ] Youtube downloader
 - [x] Queue
 - [x] Process
 - [x] API
@@ -17,7 +18,7 @@ Universal Tool contains all kind of tools for Video, Image, GIF etc.
 - [x] Cropping
 - [ ] Resize
 - [ ] Rotate
-- [ ] Reverse
+- [x] Reverse
 - [x] Change speed
 - [x] Mute
 - [x] Change volume
