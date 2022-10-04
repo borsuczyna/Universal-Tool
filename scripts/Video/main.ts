@@ -11,6 +11,10 @@ import('./mute/API.js');
 import('./change_speed/API.js');
 import('./reverse/API.js');
 import('./change_volume/API.js');
+import('./youtube/API.js');
+
+import { handleRequest } from './youtube/API.js';
+
 import('./crop/API.js');
 
 const __dirname: string = dirname(fileURLToPath(import.meta.url));
@@ -18,7 +22,7 @@ const __maindir: string = dirname(fileURLToPath(import.meta.url)).split('\\').sl
 const __uploaderdir: string = __maindir + '\\scripts\\Uploader\\page\\';
 
 const validActions = [
-    'cut', 'mute', 'change_speed', 'reverse', 'change_volume', 'crop'
+    'cut', 'mute', 'change_speed', 'reverse', 'change_volume', 'crop', 'youtube-downloader'
 ]
 
 async function videoPage(req: any, res: any) {
@@ -27,6 +31,11 @@ async function videoPage(req: any, res: any) {
     url[url.length-1] = url[url.length-1].split('?')[0];
     
     let type: FileType | boolean;
+
+    if(url[1] == 'youtube-downloader') {
+        handleRequest(req, res);
+        return;
+    }
 
     try {
         type = await easyFileType(__maindir + `\\public\\temp\\${file}`);

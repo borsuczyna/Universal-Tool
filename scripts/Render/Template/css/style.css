@@ -131,4 +131,8 @@ div #pageContent {
         display: none;
         position: absolute;
     }
+
+    #categories-list li, #sub-categories-list li {
+        padding-inline: 0.7rem;
+    }
 }
