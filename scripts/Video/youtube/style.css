@@ -23,6 +23,7 @@ button {
     padding: 0.8em;
     background-color: rgb(45, 45, 45);
     border: 1px solid rgb(50, 50, 50);
+    border-right: none;
     color: #ccc;
     border-radius: 0.4em;
     cursor: pointer;
@@ -57,7 +58,7 @@ button:hover {
     height: 2.5em;
 }
 
-#convert {
+#export-button {
     border-radius: 0.4em 0 0 0.4em;
     height: 100%;
     width: 50%;
@@ -116,10 +117,14 @@ svg.open {
 }
 
 #selection-options li {
-    cursor: pointer;
     transition: 0.2s;
     padding-inline: 0.5em;
     padding-block: 0.2em;
+    cursor: default;
+}
+
+.open li {
+    cursor: pointer !important;
 }
 
 #selection-options li:hover {
@@ -145,7 +150,7 @@ svg.open {
         transform: translate(-51%, -113%);
     }
     
-    #convert {
+    #export-button {
         /* width: calc(100% - 5em); */
         /* min-width: 50%; */
         width: 100%;
