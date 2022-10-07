@@ -16,7 +16,7 @@ Universal Tool contains all kind of tools for Video, Image, GIF etc.
 - [x] Youtube downloader
 - [x] Cutting
 - [x] Cropping
-- [ ] Resize
+- [x] Resize
 - [x] Rotate
 - [x] Reverse
 - [x] Change speed
