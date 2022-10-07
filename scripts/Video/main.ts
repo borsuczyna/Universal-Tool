@@ -11,6 +11,7 @@ import('./mute/API.js');
 import('./change_speed/API.js');
 import('./reverse/API.js');
 import('./change_volume/API.js');
+import('./rotate/API.js');
 import('./youtube/API.js');
 
 import { handleRequest } from './youtube/API.js';

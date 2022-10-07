@@ -5,6 +5,7 @@
 </script>
 
 <include type="script" src="js/playPause.js" defer/>
+<include type="script" src="rotate/export.js" defer/>
 
 <div id="video-player">
     <videoPlayer src="<%= file %>" style=``
@@ -19,8 +20,20 @@
                 <i class="fa-solid fa-play" id="play-icon"></i>
                 <i class="fa-solid fa-pause" id="pause-icon" style="display: none;"></i>
             </button>
-            <button class="noselect" id="export-button">
-                Reverse Video
+            <button class="noselect" id="rotate-90-right" onclick="action('rotate-90-right')">
+                Rotate 90° to right
+            </button>
+            <button class="noselect" id="rotate-90-left" onclick="action('rotate-90-left')">
+                Rotate 90° to left
+            </button>
+            <button class="noselect" id="rotate-90-left" onclick="action('rotate-180')">
+                Rotate 180°
+            </button>
+            <button class="noselect" id="mirror-horizontally" onclick="action('mirror-horizontally')">
+                Mirror horizontally
+            </button>
+            <button class="noselect" id="mirror-vertically" onclick="action('mirror-vertically')">
+                Mirror vertically
             </button>
         </div>
         <div class="right-buttons">
