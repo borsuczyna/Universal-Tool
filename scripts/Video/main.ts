@@ -24,8 +24,8 @@ const __maindir: string = dirname(fileURLToPath(import.meta.url)).split('\\').sl
 const __uploaderdir: string = __maindir + '\\scripts\\Uploader\\page\\';
 
 const validActions = [
-    'cut', 'mute', 'change_speed', 'reverse', 'change_volume', 'crop', 'rotate', 'resize', 'youtube-downloader'
-]
+    'cut', 'mute', 'change_speed', 'reverse', 'change_volume', 'crop', 'rotate', 'resize', 'merge', 'youtube-downloader'
+];
 
 async function videoPage(req: any, res: any) {
     const file: string = req.query.file;

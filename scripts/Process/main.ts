@@ -18,7 +18,7 @@ const regex: {[index: string]: RegExp} = {
 const messageFromProcess = function(this: Process | FFMpegProcess, message: string) {
     let type = null;
 
-    console.log(message);
+    // console.log(message);
 
     if(message.startsWith('[INFO] ')) {
         message = message.slice(7);
@@ -45,7 +45,7 @@ const messageFromProcess = function(this: Process | FFMpegProcess, message: stri
     } else if(/video:[0-9]*kB *audio/.test(message)) {
         if(this.savedFinish) {
             setFinish(this.token, this.savedFinish);
-            setTimeout(removeTempFile, 2 * 60 * 1000, __maindir + `\\public\\temp\\${this.savedFinish}`);
+            setTimeout(removeTempFile, 5 * 60 * 1000, __maindir + `\\public\\temp\\${this.savedFinish}`);
         }
     } else if(/Output *#[0=9]*, *[a-zA-Z0-9]*, *to *'(.*)\\(.*)':/.test(message)) {
         let match: RegExpExecArray | null = /Output *#[0=9]*, *[a-zA-Z0-9]*, *to *'(.*)\\(.*)':/.exec(message);
@@ -71,7 +71,7 @@ const messageFromProcess = function(this: Process | FFMpegProcess, message: stri
         message = message.slice(9);
         setFinish(this.token, message);
 
-        setTimeout(removeTempFile, 2 * 60 * 1000, __maindir + `\\public\\temp\\${message}`);
+        setTimeout(removeTempFile, 5 * 60 * 1000, __maindir + `\\public\\temp\\${message}`);
 
         return;
     } else if(regex.moviepyProgress.test(message)) {
