@@ -33,8 +33,11 @@ println('[INFO] Getting video info...')
 video = YouTube('https://youtu.be/' + url, on_progress_callback=progress_function)
 streams = video.streams.filter(progressive=True, file_extension='mp4')
 stream = streams.filter(res=quality)
+
 if len(stream) == 0:
     stream = streams.first()
+else:
+    stream = stream.first()
 
 if not stream:
     println('[ERROR] No valid sources for this video are available')

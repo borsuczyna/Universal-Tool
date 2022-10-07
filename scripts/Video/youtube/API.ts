@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 const __dirname: string = dirname(fileURLToPath(import.meta.url));
 
 const validQualities = [
-    '480p', '720p', '1080p'
+    '360p', '480p', '720p'//, '1080p'
 ]
 
 export async function handleRequest(req: any, res: any) {

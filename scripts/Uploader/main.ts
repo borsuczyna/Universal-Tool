@@ -38,5 +38,5 @@ Router.post('/upload', (req: any, res: any) => {
         file: `${token}.${format}`
     });
 
-    setTimeout(removeTempFile, 5 * 60 * 1000, __maindir + `\\public\\temp\\${token}.${format}`)
+    setTimeout(removeTempFile, 2 * 60 * 1000, __maindir + `\\public\\temp\\${token}.${format}`)
 });

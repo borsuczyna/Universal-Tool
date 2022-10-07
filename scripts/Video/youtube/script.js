@@ -43,17 +43,19 @@ const exportVideo = async () => {
     if(!canClick) return;
     canClick = false;
     
-    var url = urlInput.value;
-    var result = await makeRequest('POST', '/api/youtube-downloader', {
-        url: url,
-        quality: selected.innerHTML
-    });
-    
-    result = JSON.parse(result);
-    
-    if(result.token && result.token.length > 0) {
-        window.location.replace(`/queue?token=${result.token}`)
-    }
+    try {
+        var url = urlInput.value;
+        var result = await makeRequest('POST', '/api/youtube-downloader', {
+            url: url,
+            quality: selected.innerHTML
+        });
+        
+        result = JSON.parse(result);
+        
+        if(result.token && result.token.length > 0) {
+            window.location.replace(`/queue?token=${result.token}`)
+        }
+    } catch {}
 
     canClick = true;
 }
