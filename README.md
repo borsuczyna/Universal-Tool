@@ -22,7 +22,7 @@ Universal Tool contains all kind of tools for Video, Image, GIF etc.
 - [x] Change speed
 - [x] Mute
 - [x] Change volume
-- [ ] Merge
+- [x] Merge
 ## Image
 ## GIF
 

@@ -1,0 +1,52 @@
+<include type="style" src="css/player.css"/>
+
+<script defer>
+    const videoUrl = '<%= file %>';
+</script>
+
+<include type="style" src="merge/style.css"/>
+<include type="script" src="js/playPause.js" defer/>
+<include type="script" src="merge/export.js" defer/>
+
+<div id="video-player">
+    <videoPlayer src="<%= file %>" style=``
+        outline: 1px solid rgb(35, 35, 35);
+        border-radius: 0.5em;
+        margin-block: 0.5em;
+    `` id="video-player-src"/>
+
+    <h3>Merge with:</h3>
+    <fileUploader/>
+
+    <div id="progress" style=``
+        display: none;
+        margin-block: 0.5em;
+    ``>
+        <progress id="progress-bar" value="40" max="100"></progress>
+        <div style=``
+            margin-block: 0.8em;
+        ``>
+            <b>We're uploading your file...</b><br>
+            <b>Elapsed time: </b><div id="upload-elapsed" class="uel">00:00</div><br>
+            <b>Remaining time: </b><div id="upload-remaining" class="uel">00:00</div><br>
+            <b>Average speed: </b><div id="upload-speed" class="uel">0kb/s</div>
+        </div>
+    </div>
+
+    <div id="down-buttons">
+        <div class="left-buttons">
+            <button class="noselect" id="play-button">
+                <i class="fa-solid fa-play" id="play-icon"></i>
+                <i class="fa-solid fa-pause" id="pause-icon" style="display: none;"></i>
+            </button>
+            <button class="noselect" id="export-button" onclick="exportVideo()">
+                Merge
+            </button>
+        </div>
+        <div class="right-buttons">
+            <a href="<%= file %>" download="<%= fileName %>"><button class="noselect" id="download-button">
+                Download current
+            </button></a>
+        </div>
+    </div>
+</div>

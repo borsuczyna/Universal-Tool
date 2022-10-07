@@ -13,6 +13,7 @@ import('./reverse/API.js');
 import('./change_volume/API.js');
 import('./rotate/API.js');
 import('./resize/API.js');
+import('./merge/API.js');
 import('./youtube/API.js');
 
 import { handleRequest } from './youtube/API.js';
