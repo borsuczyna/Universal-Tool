@@ -12,6 +12,7 @@ import('./change_speed/API.js');
 import('./reverse/API.js');
 import('./change_volume/API.js');
 import('./rotate/API.js');
+import('./resize/API.js');
 import('./youtube/API.js');
 
 import { handleRequest } from './youtube/API.js';
@@ -23,7 +24,7 @@ const __maindir: string = dirname(fileURLToPath(import.meta.url)).split('\\').sl
 const __uploaderdir: string = __maindir + '\\scripts\\Uploader\\page\\';
 
 const validActions = [
-    'cut', 'mute', 'change_speed', 'reverse', 'change_volume', 'crop', 'rotate', 'youtube-downloader'
+    'cut', 'mute', 'change_speed', 'reverse', 'change_volume', 'crop', 'rotate', 'resize', 'youtube-downloader'
 ]
 
 async function videoPage(req: any, res: any) {

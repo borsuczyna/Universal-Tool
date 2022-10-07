@@ -1,0 +1,44 @@
+<include type="style" src="css/player.css"/>
+
+<script defer>
+    const videoUrl = '<%= file %>';
+</script>
+
+<include type="style" src="resize/style.css"/>
+
+<include type="script" src="js/playPause.js" defer/>
+<include type="script" src="resize/script.js" defer/>
+
+<div id="video-player">
+    <videoPlayer src="<%= file %>" style=``
+        outline: 1px solid rgb(35, 35, 35);
+        border-radius: 0.5em;
+        margin-block: 0.5em;
+    `` id="video-player-src"/>
+
+    <div id="inputs">
+        <div id="width-box" class="input-box"><label for="width">Width</label> <input type="number" id="width"/></div>
+        <div id="height-box" class="input-box"><label for="height">Height</label> <input type="number" id="height"/></div>
+        <div id="percentage-box" class="input-box"><label for="percentage">%</label> <input type="number" id="percentage" value="100"/></div>
+        <div id="aspect-ratio"><input type="checkbox" id="keep-aspect-ratio" name="Keep aspect ratio" checked><label for="keep-aspect-ratio">Keep aspect ratio</label></div>
+    </div>
+
+    <div id="down-buttons">
+
+        <div class="left-buttons">
+            <button class="noselect" id="play-button">
+                <i class="fa-solid fa-play" id="play-icon"></i>
+                <i class="fa-solid fa-pause" id="pause-icon" style="display: none;"></i>
+            </button>
+
+            <button class="noselect" onclick="exportVideo()">
+                Resize
+            </button>
+        </div>
+        <div class="right-buttons">
+            <a href="<%= file %>" download="<%= fileName %>"><button class="noselect" id="download-button">
+                Download current
+            </button></a>
+        </div>
+    </div>
+</div>

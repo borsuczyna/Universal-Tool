@@ -10,6 +10,8 @@ const regex: {[index: string]: RegExp} = {
 const messageFromProcess = function(this: Process | FFMpegProcess, message: string) {
     let type = null;
 
+    console.log(message);
+
     if(message.startsWith('[INFO] ')) {
         message = message.slice(7);
         type = 'info';

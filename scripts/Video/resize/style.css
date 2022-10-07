@@ -1,0 +1,39 @@
+.input-box {
+    display: block;
+}
+
+input {
+    background-color: rgb(45, 45, 45);
+    color: white;
+    border: 1px solid rgb(50, 50, 50);
+    border-radius: 0.5em;
+    height: 2em;
+    outline: none;
+    padding: 0.5em;
+    margin-left: 0.5em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+}
+
+#aspect-ratio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+}
+
+input[type=checkbox] {
+    width: 18px;
+}
