@@ -3,6 +3,14 @@ import { Token, setProgress, setFinish, outputConsole } from "../Queue/main.js";
 import { outputLog } from '../Log/main.js';
 import config from '../../config.json' assert {type: 'json'};
 
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+import { removeTempFile } from '../Public/main.js';
+
+const __dirname: string = dirname(fileURLToPath(import.meta.url));
+const __maindir: string = __dirname.replaceAll('\\', '/').split('/').slice(0, -2).join('\\');
+
 const regex: {[index: string]: RegExp} = {
     moviepyProgress: /t:[a-zA-Z0-9% ]*\|[a-zA-Z0-9%# ]*\| *([0-9]*)\/([0-9]*) *\[[0-9]*:[0-9]*<([0-9]*:[0-9]*)/,
 };
@@ -37,6 +45,7 @@ const messageFromProcess = function(this: Process | FFMpegProcess, message: stri
     } else if(/video:[0-9]*kB *audio/.test(message)) {
         if(this.savedFinish) {
             setFinish(this.token, this.savedFinish);
+            setTimeout(removeTempFile, 2 * 60 * 1000, __maindir + `\\public\\temp\\${this.savedFinish}`);
         }
     } else if(/Output *#[0=9]*, *[a-zA-Z0-9]*, *to *'(.*)\\(.*)':/.test(message)) {
         let match: RegExpExecArray | null = /Output *#[0=9]*, *[a-zA-Z0-9]*, *to *'(.*)\\(.*)':/.exec(message);
@@ -61,6 +70,9 @@ const messageFromProcess = function(this: Process | FFMpegProcess, message: stri
     } else if(message.startsWith('[FINISH] ')) {
         message = message.slice(9);
         setFinish(this.token, message);
+
+        setTimeout(removeTempFile, 2 * 60 * 1000, __maindir + `\\public\\temp\\${message}`);
+
         return;
     } else if(regex.moviepyProgress.test(message)) {
         let match: RegExpExecArray | null = regex.moviepyProgress.exec(message);
