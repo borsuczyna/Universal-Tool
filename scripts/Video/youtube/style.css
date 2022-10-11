@@ -4,8 +4,8 @@ h2 {
 }
 
 input {
-    background-color: rgb(45, 45, 45);
-    border: 1px solid rgb(50, 50, 50);
+    background-color: #1e2f4d;
+    border: 1px solid rgb(27, 63, 117);
     height: 2em;
     width: 30em;
     border-radius: 0.4em;
@@ -15,14 +15,14 @@ input {
 
 input:focus {
     outline-width: 0;
-    border: 1px solid rgb(55, 55, 55);
+    border: 1px solid#2159b4;
 }
 
 button {
     height: 3em;
     padding: 0.8em;
-    background-color: rgb(45, 45, 45);
-    border: 1px solid rgb(50, 50, 50);
+    background-color: #1e2f4d;
+    border: 1px solid rgb(27, 63, 117);
     border-right: none;
     color: #ccc;
     border-radius: 0.4em;
@@ -31,7 +31,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(51, 51, 51);
+    background-color: #29436e;
 }
 
 #paste {
@@ -40,8 +40,8 @@ button:hover {
     z-index: 1;
     padding: 0.5em;
     height: 2.5em;
-    background-color: rgb(60, 60, 60);
-    border: 1px solid rgb(63, 63, 63);
+    background-color: #1e2f4d;
+    border: 1px solid rgb(27, 63, 117);
 }
 
 #paste svg {
@@ -49,7 +49,7 @@ button:hover {
 }
 
 #paste:hover {
-    background-color: rgb(73, 73, 73);
+    background-color: #29436e;
 }
 
 #convert-selection {
@@ -67,8 +67,8 @@ button:hover {
 #select {
     border-radius: 0 0.4em 0.4em 0;
     width: 50%;
-    background-color: rgb(45, 45, 45);
-    border: 1px solid rgb(50, 50, 50);
+    background-color: #1e2f4d;
+    border: 1px solid rgb(27, 63, 117);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -87,7 +87,7 @@ svg.open {
 }
 
 #select:hover {
-    background-color: rgb(51, 51, 51);
+    background-color: #29436e;
 }
 
 #select.open {
@@ -96,8 +96,8 @@ svg.open {
 
 #selection-options {
     position: absolute;
-    background-color: rgb(45, 45, 45);
-    border: 1px solid rgb(50, 50, 50);
+    background-color: #1e2f4d;
+    border: 1px solid rgb(27, 63, 117);
     border-radius: 0 0 0.4em 0.4em;
     list-style: none;
     margin: 0;
@@ -128,7 +128,7 @@ svg.open {
 }
 
 #selection-options li:hover {
-    background-color: rgb(63, 63, 63);
+    background-color: #29436e;
 }
 
 @media (max-width: 768px) {

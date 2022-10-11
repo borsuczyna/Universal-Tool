@@ -1,15 +1,36 @@
 .file-uploader {
-    padding: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 1px dashed #ccc;
-    border-radius: 0.4rem;
-    display: inline-block;
-    overflow: hidden;
-    width: min(calc(100vw - 5em), 250px);
+   padding: 0.5rem;
+   background-color: rgba(255, 255, 255, 0.03);
+   border: 1px dashed #ccc;
+   border-radius: 0.4rem;
+   display: inline-block;
+   overflow: hidden;
+   width: min(calc(100vw - 5em), 250px);
+}
+
+.file-uploader input {
+   color: transparent;
+}
+
+.file-uploader input::-webkit-file-upload-button {
+   visibility: hidden;
+}
+
+.file-uploader input::before {
+   content: 'Select file';
+   color: #ccc;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   outline: none;
+   white-space: nowrap;
+   border: none;
+   font-size: 17px;
+   font-weight: 500;
 }
 
 @media (max-width: 568px) {
-    .file-uploader {
-        width: calc(100vw - 5em);
-    }
+   .file-uploader {
+      width: calc(100vw - 5em);
+   }
 }

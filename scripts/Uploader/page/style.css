@@ -28,19 +28,20 @@ button {
 
 button {
     border: none;
-    background-color: rgb(50, 50, 50);
+    background-color: #1e2f4d;
     height: 3em;
     min-width: 4em;
     border-radius: 1em;
     padding: 1em;
     color: white;
     cursor: pointer;
+    font-family: 'Inter', sans-serif;
 
     transition: 0.2s background-color;
 }
 
 button:hover {
-    background-color: rgb(55, 55, 55);
+    background-color: #29436e;
 }
 
 @media (max-width: 568px) {
