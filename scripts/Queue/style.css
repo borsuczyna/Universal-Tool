@@ -17,16 +17,17 @@ progress {
     border-radius: 3px; 
     width: 30em;
     height: 0.5em;
-    outline: 1px solid rgb(39, 39, 39);
+    outline: none;
+    border: 1px solid #1b3f75;
 }
 
 progress::-webkit-progress-bar {
-    background-color: rgb(32, 32, 32);
+    background-color: #1e2f4d;
     border-radius: 3px;
 }
 
 progress::-webkit-progress-value {
-    background-color: rgb(55, 55, 55);
+    background-color: #204c97;
     border-radius: 3px;
 }
 
@@ -34,8 +35,8 @@ progress::-webkit-progress-value {
     margin-top: 0.8em;
     width: 29em;
     height: 15em;
-    background-color: rgb(36, 36, 36);
-    border: 1px solid rgb(35,35,35);
+    background-color: #1e2f4d;
+    border: 1px solid #1b3f75;
     border-radius: 0.5em;
     padding: 0.5em;
     text-align: left;

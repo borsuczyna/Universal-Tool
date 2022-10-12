@@ -29,6 +29,9 @@ async function initLogFile(): Promise<void> {
 
     logFile = `${__maindir}\\${logsLocation}${logFile}`;
 
+    if(!fs.existsSync(`${__maindir}\\${logsLocation}`)) {
+        await fs.mkdirSync(`${__maindir}\\${logsLocation}`);
+    }
     await fs.writeFileSync(logFile, '# LOG START\n');
 }
 
