@@ -19,3 +19,6 @@ import('./scripts/Home/main.js');
 
 // Video
 import('./scripts/Video/main.js');
+
+// Image
+import('./scripts/Image/main.js');

@@ -1,0 +1,28 @@
+#top-list {
+    position: absolute;
+    background-color: rgb(222, 222, 222);
+    margin: 0;
+    padding: 0;
+}
+
+#top-list li {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0.3em;
+    padding-inline: 0.8em;
+    font-size: 0.75em;
+    display: flex;
+    gap: 2em;
+    
+}
+
+#top-list li:hover {
+    background-color: rgb(178, 229, 255);
+}
+
+.li-right {
+    display: flex;
+    justify-content: right;
+    flex-grow: 1;
+}

@@ -8,7 +8,7 @@ var videoSpeed = 1;
 const onSpeedSlide = () => {
     videoSpeed = Math.round((Math.pow($("#speed-slider").value, 3.991) + 0.1)*100)/100;
 
-    $("#video-player-src").playbackRate = videoSpeed;
+    $("#video-player-src").playbackRate = Math.min(videoSpeed, 15);
 
     $("#speed-label").innerHTML = 'Current Speed: ' + videoSpeed + 'x';
 }
@@ -25,7 +25,7 @@ const onSpeedSlide = () => {
     `` id="video-player-src"/>
 
     <div class="speed-slider">
-        <input class='range' oninput="onSpeedSlide()" type='range' min="0.1" max="2" value="1" step="0.01" id="speed-slider" list="tickmarks" style=``
+        <input class='range' oninput="onSpeedSlide()" type='range' min="0.1" max="4.5" value="1" step="0.01" id="speed-slider" list="tickmarks" style=``
             width: 500px;
         ``>
         <p id="speed-label">Current Speed: 1x</p>

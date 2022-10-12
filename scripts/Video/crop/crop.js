@@ -3,11 +3,16 @@ const cropData = {
     holding: false,
     moving: false,
 };
+const touch = {
+    x: 0,
+    y: 0,
+    isDown: false
+};
 const cursor = {
     x: 0,
     y: 0,
     isDown: false,
-}
+};
 var crop = player = ctx = null;
 var resizePoints = {
     'left': {
@@ -290,4 +295,37 @@ addEventListener('load', () => {
     ctx = crop.getContext('2d');
 
     requestAnimationFrame(updateCropCanvas);
+});
+
+addEventListener('touchstart', (e) => {
+    let rect = player.getBoundingClientRect();
+    let x = e.touches[0].clientX;
+    let y = e.touches[0].clientY;
+    let overCropCanvas = (x >= rect.x && x <= rect.x + rect.width && y >= rect.y && y <= rect.y + rect.height);
+    if(!overCropCanvas) return;
+    
+    touch.isDown = true;
+
+    cropData.holding = 'creating';
+    cropData.selected = {
+        x: Math.floor(x - rect.x)/rect.width,
+        y: Math.floor(y - rect.y)/rect.height,
+        width: 0,
+        height: 0,
+    }
+});
+
+addEventListener('touchend', (e) => {
+    touch.isDown = false;
+});
+
+addEventListener('touchmove', (e) => {
+    if(!touch.isDown) return;
+
+    let rect = player.getBoundingClientRect();
+    let x = e.touches[0].clientX;
+    let y = e.touches[0].clientY;
+
+    cropData.selected.width = Math.floor(x - rect.x - cropData.selected.x * rect.width)/rect.width;
+    cropData.selected.height = Math.floor(y - rect.y - cropData.selected.y * rect.height)/rect.height;
 });

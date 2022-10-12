@@ -50,20 +50,6 @@ let categories = [
     {
         name: "Image",
         url: '/image',
-        subCategory: [
-            {
-                name: "Image downloader",
-            }
-        ]
-    },
-    {
-        name: "GIF",
-        url: '/gif',
-        subCategory: [
-            {
-                name: "GIF downloader",
-            }
-        ]
     },
     {
         name: "GIF",
@@ -119,7 +105,7 @@ window.onload = function() {
         return;
     }
 
-    for(let subCategory of currentCategory.subCategory) {
+    for(let subCategory of (currentCategory.subCategory || [])) {
         let subCategoryElement = document.createElement('li');
         subCategoryElement.innerHTML = `${subCategory.name}`;
         subCategoryElement.classList.add('noselect');

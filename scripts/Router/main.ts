@@ -10,7 +10,7 @@ export async function init(port: number = 3000) {
 
     app.use(fileUpload({
         limits: {
-            fileSize: 50 * 1024 * 1024
+            fileSize: 5000 * 1024 * 1024
         }
     }));
 

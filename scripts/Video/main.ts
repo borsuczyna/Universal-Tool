@@ -15,10 +15,9 @@ import('./rotate/API.js');
 import('./resize/API.js');
 import('./merge/API.js');
 import('./youtube/API.js');
+import('./crop/API.js');
 
 import { handleRequest } from './youtube/API.js';
-
-import('./crop/API.js');
 
 const __dirname: string = dirname(fileURLToPath(import.meta.url));
 const __maindir: string = dirname(fileURLToPath(import.meta.url)).split('\\').slice(0, -2).join('\\');

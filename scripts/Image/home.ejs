@@ -1,0 +1,67 @@
+<include type="style" src="css/home.css"/>
+<include type="style" src="editor/style/window.css"/>
+
+<include type="script" src="editor/js/window.js" defer/>
+<include type="script" src="js/newProject.js" defer/>
+
+<style>
+    body {
+        overflow: hidden !important;
+    }
+</style>
+
+<div id="main-buttons">
+    <button id="new-project" onclick="openCloseProjectWindow()">★ New project</button>
+    <button id="open-project">🡿 Open local project</button>
+</div>
+<div id="drop-files-here" class="noselect">
+    Drop any files here 📁
+</div>
+
+<div class="window draggable noselect whidden" id="new-project-window" style=``
+    min-width: 35em !important;
+``>
+    <div class="whead">
+        <span class="wname">New project</span>
+        <span class="cross gsicon" onclick="openCloseProjectWindow()">✕</span>
+    </div>
+    <div class="wbody">
+        <div style=``
+            display: flex;
+        ``>
+            <div class="wcontent">
+                <div class="wrow"><label for="name">Name</label> <input type="text" id="name" value="New project" spellcheck="false"></div>
+                <div class="wrow">
+                    <label for="name">Width</label>
+                    <div style=``
+                        display: flex;
+                        gap: 0.2em;
+                        ``>
+                        <input type="number" id="width" value="1280" spellcheck="false">
+                        <select id="metrices">
+                            <option value="0">pixels</option>
+                            <option value="1">centimeters</option>
+                            <option value="2">inches</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="wrow"><label for="height">Height</label> <input type="number" id="height" value="720" spellcheck="false"></div>
+                <div class="wrow">
+                    <label for="background">Background</label>
+                    <select id="background">
+                        <option value="0">White</option>
+                        <option value="1">Black</option>
+                        <option value="2" selected>Transparent</option>
+                    </select>
+                </div>
+            </div>
+            <div class="wcontent" style=``
+                margin-right: 0;
+                margin-left: auto;
+            ``>
+                <button id="create-project" class="wbutton" onclick="createProject()">ok</button>
+                <button id="create-project" class="wbutton" onclick="openCloseProjectWindow()">cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

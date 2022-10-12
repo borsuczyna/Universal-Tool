@@ -16,7 +16,7 @@ Router.post('/api/change_speed', (req: any, res: any) => {
         return res.status(400).send(`Invalid request body`);
     }
 
-    if(speed < 0.01 || speed > 30) {
+    if(speed < 0.01 || speed > 300) {
         return res.status(406).send('Invalid video speed');
     }
 

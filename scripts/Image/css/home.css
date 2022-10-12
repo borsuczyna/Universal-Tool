@@ -1,0 +1,52 @@
+#pageContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5em !important;
+
+    font-family: "Open Sans", Sans-Serif;
+}
+
+#main-buttons {
+    display: flex;
+    gap: 1em;
+}
+
+#drop-files-here {
+    margin-top: 2em;
+    color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10em;
+    padding-block: 7em;
+    border-radius: 1em;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 1em;
+    padding-block: 0.8em;
+    border-radius: 0.5em;
+    background-color: rgb(51, 51, 51);
+    color: rgb(199, 199, 199);
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.2s background-color;
+}
+
+button:hover {
+    background-color: rgb(58, 58, 58);
+}
+
+@media (max-width: 768px) {
+    #drop-files-here {
+        padding: 0;
+        width: 100%;
+        height: calc(100vh - 30em);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

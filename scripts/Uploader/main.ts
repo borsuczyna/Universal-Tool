@@ -15,7 +15,7 @@ Router.post('/upload', (req: any, res: any) => {
 
     let file: any = req.files.file;
     let size: number = req.files.file.size;
-    if(size > 500 * 1024 * 1024) {
+    if(size > 5000 * 1024 * 1024) {
         res.status(406).json({
             message: 'Too big file'
         });

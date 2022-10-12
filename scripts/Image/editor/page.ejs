@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>universal-tool.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+    <include type="style" src="style/body.css"/>
+    <include type="style" src="style/window.css"/>
+    <include type="style" src="style/topbar.css"/>
+    <include type="style" src="style/toplist.css"/>
+
+    <include type="script" src="js/window.js" defer/>
+    <include type="script" src="js/topbar.js" defer/>
+</head>
+<body>
+    <div id="top-bar">
+        <logo style=``
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        ``>
+            <img src="public/logo-small.png" style=``
+                margin-inline: 3px;
+                width: 28px;
+                height: 26px;
+            ``/>
+        </logo>
+
+        <div id="top-buttons"></div>
+    </div>
+
+    <ul id="top-list" class="">
+        <li><div>New...</div><div class="li-right">Alt+Ctrl + N</div></li>
+        <li><div>Open...</div><div class="li-right">Ctrl + O</div></li>
+    </ul>
+</body>
+</html>
